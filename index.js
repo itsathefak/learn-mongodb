@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const path = require("path");
+const Chat = require("./models/chat.js");
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -16,6 +17,17 @@ async function main() {
     console.error("Error connecting to MongoDB:", err.message);
   }
 }
+
+let chat1 = new Chat({
+  from: "Athiii",
+  to: "Pandu",
+  message: "Hey, How are you?",
+  createdAt: new Date(),
+});
+
+chat1.save().then((res) => {
+  console.log(res);
+});
 
 main();
 app.get("/", (req, res) => {
