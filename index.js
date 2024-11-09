@@ -6,6 +6,7 @@ const Chat = require("./models/chat.js");
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+app.use(express.static(path.join(__dirname, "public"))); // for setting up CSS
 
 async function main() {
   try {
@@ -24,7 +25,6 @@ main();
 
 app.get("/chats", async (req, res) => {
   let chats = await Chat.find();
-  console.log(chats);
   res.render("index.ejs", { chats });
 });
 
