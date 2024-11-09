@@ -18,6 +18,16 @@ async function main() {
   }
 }
 
+main();
+
+/* Index Route */
+
+app.get("/chats", async (req, res) => {
+  let chats = await Chat.find();
+  console.log(chats);
+  res.send("working");
+});
+
 app.get("/", (req, res) => {
   res.send("The root is working");
 });
