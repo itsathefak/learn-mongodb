@@ -11,6 +11,10 @@
 <body>
     <h3>All Chats!</h3>
 
+    <form method="get" action="/chats/new">
+        <button>New Chat</button>
+    </form>
+    <br><br>
     <% for ( let chat of chats ){ %>
         <div class="chat">
             <p>From : <i>

@@ -28,6 +28,10 @@ app.get("/chats", async (req, res) => {
   res.render("index.ejs", { chats });
 });
 
+app.get("/chats/new", async (req, res) => {
+  res.render("new.ejs");
+});
+
 app.get("/", (req, res) => {
   res.send("The root is working");
 });
