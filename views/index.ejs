@@ -33,6 +33,9 @@
                     <%= chat.to %>
                 </i>
             </p>
+            <form method="POST" action="/chats/<%= chat._id %>?_method=DELETE">
+                <button>Delete</button>
+            </form>
             <hr>
             <p>
                 <%= chat.createdAt.toString().split(" ")[4] %>
