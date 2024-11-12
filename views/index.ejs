@@ -31,6 +31,11 @@
                 </i>
             </p>
             <hr>
+            <p>
+                <%= chat.createdAt.toString().split(" ")[4] %>
+            </p>
+            <p><%= chat.createdAt.toString().split(" ").slice(0,4).join(" ") %>
+            </p>
             <br><br>
         </div>
 
